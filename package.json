@@ -10,8 +10,11 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^4.5.0",
+    "@astrojs/alpinejs": "^0.4.0",
     "@astrojs/check": "^0.5.7",
+    "@types/alpinejs": "^3.13.7",
+    "alpinejs": "^3.13.7",
+    "astro": "^4.5.0",
     "typescript": "^5.4.2"
   }
 }
