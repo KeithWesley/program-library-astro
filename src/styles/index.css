@@ -17,8 +17,13 @@ fieldset {
   }
 }
 
-div:has(button) {
+.buttons-container {
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
+  gap: 8px;
+
+  button {
+    width: 80px;
+  }
 }

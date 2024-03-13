@@ -1,25 +1,11 @@
 import Alpine from "alpinejs";
 
 const goalOptions = [
-  { value: "strength", label: "Strength" },
   { value: "hypertrophy", label: "Hypertrophy" },
-  { value: "powerbuilding", label: "Power Building" },
-  { value: "conditioning", label: "Conditioning" },
+  { value: "strength", label: "Strength" },
 ];
 
-const frequencyOptions = [
-  { value: "2", label: "2xWeek" },
-  { value: "3", label: "3xWeek" },
-  { value: "4", label: "4xWeek" },
-  { value: "5", label: "5xWeek" },
-];
-
-const typeOptions = [
-  { value: "type1", label: "Type 1" },
-  { value: "type2", label: "Type 2" },
-  { value: "type3", label: "Type 3" },
-  { value: "type4", label: "Type 4" },
-];
+const programOptions = [{ value: "type1", label: "Type 1" }];
 
 document.addEventListener("alpine:init", () => {
   Alpine.data("form", () => ({
@@ -31,24 +17,23 @@ document.addEventListener("alpine:init", () => {
     ],
     selects: [
       { id: "goal", label: "Goal", options: goalOptions, value: "" },
-      {
-        id: "frequency",
-        label: "Frequency",
-        options: frequencyOptions,
-        value: "",
-      },
-      { id: "type", label: "Type", options: typeOptions, value: "" },
+      { id: "program", label: "Program", options: programOptions, value: "" },
     ],
-    formValues: function () {
-      const inputs = this.inputs.reduce(
-        (acc, input) => ({ ...acc, [input.label]: input.value }),
-        {}
-      );
-      const selects = this.selects.reduce(
-        (acc, select) => ({ ...acc, [select.label]: select.value }),
-        {}
-      );
-      return JSON.stringify({ ...inputs, ...selects });
+    disableSelect: function (id: string) {
+      if (id === "program" && this.selects[0].value === "") {
+        const programSelect = this.selects.find(
+          (select: any) => select.id === "program"
+        );
+        if (programSelect) programSelect.value = "";
+        return true;
+      } else {
+        return false;
+      }
+    },
+    disableSubmit: function () {
+      const inputsValid = this.inputs.every((input) => input.value !== "");
+      const selectsValid = this.selects.every((select) => select.value !== "");
+      return inputsValid && selectsValid ? false : true;
     },
   }));
 });

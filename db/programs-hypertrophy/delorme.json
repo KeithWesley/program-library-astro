@@ -1,0 +1,125 @@
+{
+  "title": "Delorme Hypertrophy Program",
+  "days": [
+    {
+      "day": "Day 1",
+      "exercises": [
+        {
+          "order": "A1",
+          "exercise": "Squat",
+          "setsxreps": [
+            { "set": 1, "reps": 10, "load": 0.5 },
+            { "set": 2, "reps": 5, "load": 0.75 },
+            { "set": 3, "reps": 10, "load": 1 }
+          ],
+          "weight": [0, 0, 0],
+          "notes": ""
+        },
+        {
+          "order": "A2",
+          "exercise": "Chin-ups",
+          "setsxreps": [
+            { "set": 1, "reps": 10, "load": 0.5 },
+            { "set": 2, "reps": 5, "load": 0.75 },
+            { "set": 3, "reps": 10, "load": 1 }
+          ],
+          "weight": [0, 0, 0],
+          "notes": ""
+        },
+        {
+          "order": "B1",
+          "exercise": "Dips",
+          "setsxreps": [
+            { "set": 1, "reps": 10, "load": 0.5 },
+            { "set": 2, "reps": 5, "load": 0.75 },
+            { "set": 3, "reps": 10, "load": 1 }
+          ],
+          "weight": [0, 0, 0],
+          "notes": ""
+        },
+        {
+          "order": "B2",
+          "exercise": "Barbell Row",
+          "setsxreps": [
+            { "set": 1, "reps": 10, "load": 0.5 },
+            { "set": 2, "reps": 5, "load": 0.75 },
+            { "set": 3, "reps": 10, "load": 1 }
+          ],
+          "weight": [0, 0, 0],
+          "notes": ""
+        },
+        {
+          "order": "C1",
+          "exercise": "Ab Wheel",
+          "setsxreps": [
+            { "set": 1, "reps": 10, "load": "Bodyweight" },
+            { "set": 2, "reps": 10, "load": "Bodyweight" },
+            { "set": 3, "reps": 10, "load": "Bodyweight" }
+          ],
+          "weight": [],
+          "notes": ""
+        }
+      ]
+    },
+    {
+      "name": "Day 2",
+      "exercises": [
+        {
+          "order": "A1",
+          "exercise": "Straight Legged Deadlift",
+          "setsxreps": [
+            { "set": 1, "reps": 10, "load": 0.5 },
+            { "set": 2, "reps": 5, "load": 0.75 },
+            { "set": 3, "reps": 10, "load": 1 }
+          ],
+          "weight": [0, 0, 0],
+          "notes": ""
+        },
+        {
+          "order": "A2",
+          "exercise": "Kneeling Press",
+          "setsxreps": [
+            { "set": 1, "reps": 10, "load": 0.5 },
+            { "set": 2, "reps": 5, "load": 0.75 },
+            { "set": 3, "reps": 10, "load": 1 }
+          ],
+          "weight": [0, 0, 0],
+          "notes": ""
+        },
+        {
+          "order": "B1",
+          "exercise": "Close Grip Bench Press",
+          "setsxreps": [
+            { "set": 1, "reps": 10, "load": 0.5 },
+            { "set": 2, "reps": 5, "load": 0.75 },
+            { "set": 3, "reps": 10, "load": 1 }
+          ],
+          "weight": [0, 0, 0],
+          "notes": ""
+        },
+        {
+          "order": "B2",
+          "exercise": "TRX Row",
+          "setsxreps": [
+            { "set": 1, "reps": 10, "load": "Bodyweight" },
+            { "set": 2, "reps": 10, "load": "Bodyweight" },
+            { "set": 3, "reps": 10, "load": "Bodyweight" }
+          ],
+          "weight": [0, 0, 0],
+          "notes": "Move feet closer to wall each set."
+        },
+        {
+          "order": "C1",
+          "exercise": "Ab Wheel",
+          "setsxreps": [
+            { "set": 1, "reps": 10, "load": "Bodyweight" },
+            { "set": 2, "reps": 10, "load": "Bodyweight" },
+            { "set": 3, "reps": 10, "load": "Bodyweight" }
+          ],
+          "weight": [],
+          "notes": ""
+        }
+      ]
+    }
+  ]
+}

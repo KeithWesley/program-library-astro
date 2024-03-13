@@ -1,0 +1,63 @@
+{
+  "title": "Even Easier Strength Program",
+  "days": [
+    {
+      "day": "Day 1",
+      "exercises": [
+        {
+          "order": "A1",
+          "exercise": "Kettlebell Swings",
+          "setsxreps": [
+            { "set": 1, "reps": 15, "load": 1 },
+            { "set": 2, "reps": 15, "load": 1 },
+            { "set": 3, "reps": 15, "load": 1 },
+            { "set": 4, "reps": 15, "load": 1 },
+            { "set": 5, "reps": 15, "load": 1 }
+          ],
+          "weight": [1, 1, 1, 1, 1],
+          "notes": ""
+        },
+        {
+          "order": "B1",
+          "exercise": "Press",
+          "setsxreps": [
+            { "set": 1, "reps": 5, "load": 1 },
+            { "set": 2, "reps": 5, "load": 1 }
+          ],
+          "weight": [1, 1],
+          "notes": ""
+        },
+        {
+          "order": "C1",
+          "exercise": "Chin-up",
+          "setsxreps": [
+            { "set": 1, "reps": 5, "load": 1 },
+            { "set": 2, "reps": 5, "load": 1 }
+          ],
+          "weight": [1, 1],
+          "notes": ""
+        },
+        {
+          "order": "D1",
+          "exercise": "Deadlift",
+          "setsxreps": [
+            { "set": 1, "reps": 5, "load": 1 },
+            { "set": 2, "reps": 5, "load": 1 }
+          ],
+          "weight": [1, 1],
+          "notes": ""
+        },
+        {
+          "order": "E1",
+          "exercise": "Ab Wheel",
+          "setsxreps": [
+            { "set": 1, "reps": 5, "load": 1 },
+            { "set": 2, "reps": 5, "load": 1 }
+          ],
+          "weight": ["Bw", "Bw"],
+          "notes": ""
+        }
+      ]
+    }
+  ]
+}
