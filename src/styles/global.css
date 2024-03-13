@@ -72,7 +72,8 @@ body {
   background-color: #fafafa;
 }
 
-input, select {
+input,
+select {
   height: 32px;
   width: 100%;
 }
