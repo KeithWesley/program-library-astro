@@ -1,5 +1,6 @@
 ---
-
+import BaseLayout from "../layouts/BaseLayout.astro";
+import "../styles/index.css";
 ---
 
 <html lang="en">
@@ -9,14 +10,63 @@
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <title>Astro</title>
+    <script src="../scripts/index.ts"></script>
   </head>
   <body>
-    <h1>Astro</h1>
+    <BaseLayout>
+      <form x-data="form">
+        <fieldset>
+          <legend>
+            <h3>1RM's</h3>
+            <p>Enter 1 rep maxes below.</p>
+          </legend>
 
-    <div x-data="{ expanded: false }">
-      <button @click="expanded = ! expanded">Toggle Content</button>
+          <template x-for="input in inputs" :key="input.id">
+            <div>
+              <label :for="input.id" x-text="`${input.label}(lbs)`"></label>
+              <input
+                :name="input.id"
+                :id="input.id"
+                x-model="input.value"
+                x-mask="999"
+                min="0"
+                max="1000"
+                required
+              />
+            </div>
+          </template>
+        </fieldset>
 
-      <p id="foo" x-show="expanded" x-collapse>Lorem ipsum</p>
-    </div>
+        <fieldset>
+          <legend>
+            <h3>Goal, Frequency, Type</h3>
+            <p>Select goal, frequency, and type.</p>
+          </legend>
+
+          <template x-for="select in selects" :key="select.id">
+            <div>
+              <label :for="select.id" x-text="select.label"></label>
+              <select
+                :name="select.id"
+                :id="select.id"
+                x-model="select.value"
+                required
+              >
+                <option value="">-- Select an option --</option>
+                <template x-for="option in select.options" :key="option.value">
+                  <option :value="option.value" x-text="option.label"></option>
+                </template>
+              </select>
+            </div>
+          </template>
+        </fieldset>
+
+        <div>
+          <button type="submit">Submit</button>
+        </div>
+
+        <div x-text="formValues()"></div>
+      </form>
+    </BaseLayout>
   </body>
 </html>
