@@ -77,10 +77,45 @@ const program = (await getProgram(
         </div>
       </form>
 
-      <span style="word-wrap: break-word;">
-        {program?.title}
-        {program?.days}
-      </span>
+      <div style="margin-top: 32px;">
+        <h3>{program?.title}</h3>
+        {
+          program?.sessions.map((session) => (
+            <table style="margin: 16px 0;">
+              <caption>{session.day}</caption>
+              <thead>
+                <tr>
+                  <th>Order</th>
+                  <th>Exercise</th>
+                  <th>SetsxReps</th>
+                  <th>Weight</th>
+                </tr>
+              </thead>
+
+              <tbody>
+                {session.workout.map((row) => (
+                  <tr>
+                    <th>{row.order}</th>
+                    <td>{row.exercise}</td>
+                    <td>
+                      {row.setsxreps.map((sets) => (
+                        <span>
+                          {sets.set}x{sets.reps}@{sets.load},
+                        </span>
+                      ))}
+                    </td>
+                    <td>
+                      {row.weights.map((weight) => (
+                        <span>{weight},</span>
+                      ))}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          ))
+        }
+      </div>
     </BaseLayout>
   </body>
 </html>

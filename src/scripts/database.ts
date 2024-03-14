@@ -9,7 +9,7 @@ export async function getProgram(goal: string) {
       .select()
       .from(ProgramsTable)
       .where(eq(ProgramsTable.goal, goal));
-    return response[0].details as ProgramApiResponseProps;
+    return response[0].program as ProgramApiResponseProps;
   } catch (error) {
     console.error("Get Programs API Error: ", error);
     return null;

@@ -85,3 +85,16 @@ button {
 button:disabled {
   cursor: default;
 }
+
+table {
+  width: 100%;
+}
+
+th,
+td {
+  border: 1px solid black;
+}
+
+caption {
+  text-align: start;
+}

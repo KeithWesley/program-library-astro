@@ -27,13 +27,13 @@ declare module "astro:db" {
           optional: false;
         };
       };
-      details: {
+      program: {
         type: "json";
         schema: {
           optional: false;
           unique: false;
           deprecated: false;
-          name: "details";
+          name: "program";
           collection: "ProgramsTable";
         };
       };

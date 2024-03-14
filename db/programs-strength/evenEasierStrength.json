@@ -1,61 +1,56 @@
 {
   "title": "Even Easier Strength Program",
-  "days": [
+  "sessions": [
     {
       "day": "Day 1",
-      "list": [
+      "workout": [
         {
           "order": "A1",
           "exercise": "Kettlebell Swings",
           "setsxreps": [
             { "set": 1, "reps": 15, "load": 1 },
-            { "set": 2, "reps": 15, "load": 1 },
-            { "set": 3, "reps": 15, "load": 1 },
-            { "set": 4, "reps": 15, "load": 1 },
-            { "set": 5, "reps": 15, "load": 1 }
+            { "set": 1, "reps": 15, "load": 1 },
+            { "set": 1, "reps": 15, "load": 1 },
+            { "set": 1, "reps": 15, "load": 1 },
+            { "set": 1, "reps": 15, "load": 1 }
           ],
-          "weight": [1, 1, 1, 1, 1],
-          "notes": ""
+          "weights": [1, 1, 1, 1, 1]
         },
         {
           "order": "B1",
           "exercise": "Press",
           "setsxreps": [
             { "set": 1, "reps": 5, "load": 1 },
-            { "set": 2, "reps": 5, "load": 1 }
+            { "set": 1, "reps": 5, "load": 1 }
           ],
-          "weight": [1, 1],
-          "notes": ""
+          "weights": [1, 1]
         },
         {
           "order": "C1",
           "exercise": "Chin-up",
           "setsxreps": [
             { "set": 1, "reps": 5, "load": 1 },
-            { "set": 2, "reps": 5, "load": 1 }
+            { "set": 1, "reps": 5, "load": 1 }
           ],
-          "weight": [1, 1],
-          "notes": ""
+          "weights": [1, 1]
         },
         {
           "order": "D1",
           "exercise": "Deadlift",
           "setsxreps": [
             { "set": 1, "reps": 5, "load": 1 },
-            { "set": 2, "reps": 5, "load": 1 }
+            { "set": 1, "reps": 5, "load": 1 }
           ],
-          "weight": [1, 1],
-          "notes": ""
+          "weights": [1, 1]
         },
         {
           "order": "E1",
           "exercise": "Ab Wheel",
           "setsxreps": [
             { "set": 1, "reps": 5, "load": 1 },
-            { "set": 2, "reps": 5, "load": 1 }
+            { "set": 1, "reps": 5, "load": 1 }
           ],
-          "weight": ["Bw", "Bw"],
-          "notes": ""
+          "weights": []
         }
       ]
     }
