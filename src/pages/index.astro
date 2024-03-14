@@ -69,10 +69,17 @@ const program = (await getProgram(
 
         <div class="buttons-container">
           <button type="reset">Reset</button>
-          <button type="submit" @click.prevent="handleSubmit()">Submit</button>
-          <!-- :disabled="disableSubmit()" -->
+          <button
+            type="submit"
+            :disabled="disableSubmit()"
+            @click.prevent="handleSubmit()">Submit</button
+          >
         </div>
       </form>
+
+      <span style="word-wrap: break-word;">
+        {program}
+      </span>
     </BaseLayout>
   </body>
 </html>
