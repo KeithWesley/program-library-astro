@@ -3,7 +3,7 @@
   "days": [
     {
       "day": "Day 1",
-      "exercises": [
+      "list": [
         {
           "order": "A1",
           "exercise": "Squat",
@@ -63,7 +63,7 @@
     },
     {
       "name": "Day 2",
-      "exercises": [
+      "list": [
         {
           "order": "A1",
           "exercise": "Straight Legged Deadlift",

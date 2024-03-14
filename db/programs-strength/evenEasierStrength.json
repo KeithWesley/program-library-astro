@@ -3,7 +3,7 @@
   "days": [
     {
       "day": "Day 1",
-      "exercises": [
+      "list": [
         {
           "order": "A1",
           "exercise": "Kettlebell Swings",

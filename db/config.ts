@@ -4,7 +4,7 @@ export const ProgramsTable = defineTable({
   columns: {
     id: column.text({ primaryKey: true }),
     goal: column.text(),
-    program: column.json(),
+    details: column.json(),
   },
 });
 

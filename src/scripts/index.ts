@@ -30,6 +30,7 @@ document.addEventListener("alpine:init", () => {
         return false;
       }
     },
+    handleSubmit: async function () {},
     disableSubmit: function () {
       const inputsValid = this.inputs.every((input) => input.value !== "");
       const selectsValid = this.selects.every((select) => select.value !== "");

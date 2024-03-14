@@ -1,7 +1,11 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import "../styles/index.css";
-import { programsData } from "../scripts/database.ts";
+import { getProgram } from "../scripts/database.ts";
+import type { ProgramApiResponseProps } from "../types/databaseTypes";
+const program = (await getProgram(
+  "hypertrophy"
+)) as ProgramApiResponseProps | null;
 ---
 
 <html lang="en">
@@ -65,11 +69,10 @@ import { programsData } from "../scripts/database.ts";
 
         <div class="buttons-container">
           <button type="reset">Reset</button>
-          <button type="submit" :disabled="disableSubmit()">Submit</button>
+          <button type="submit" @click.prevent="handleSubmit()">Submit</button>
+          <!-- :disabled="disableSubmit()" -->
         </div>
       </form>
-
-      {console.log("ProgramsData: ", programsData)}
     </BaseLayout>
   </body>
 </html>
