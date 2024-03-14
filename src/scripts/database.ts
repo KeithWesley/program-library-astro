@@ -15,12 +15,3 @@ export async function getProgram(goal: string) {
     return null;
   }
 }
-
-await db
-  .select()
-  .from(ProgramsTable)
-  .then((response) => {
-    if (response) {
-      programsData = response;
-    }
-  });
