@@ -78,7 +78,8 @@ const program = (await getProgram(
       </form>
 
       <span style="word-wrap: break-word;">
-        {program}
+        {program?.title}
+        {program?.days}
       </span>
     </BaseLayout>
   </body>
