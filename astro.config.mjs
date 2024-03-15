@@ -1,5 +1,6 @@
 import { defineConfig } from "astro/config";
 
+import netlify from "@astrojs/netlify";
 import alpinejs from "@astrojs/alpinejs";
 import db from "@astrojs/db";
 
