@@ -1,17 +1,17 @@
 import { db, eq, ProgramsTable } from "astro:db";
-import type { ProgramApiResponseProps } from "../types/databaseTypes";
+import type { ProgramsApiResponseProps } from "../types/databaseTypes";
 
 export let programsData: any;
 
-export async function getProgram(goal: string) {
+export async function getPrograms(goal: string) {
   try {
     const response = await db
       .select()
       .from(ProgramsTable)
       .where(eq(ProgramsTable.goal, goal));
-    return response[0].program as ProgramApiResponseProps;
+    return response as ProgramsApiResponseProps[];
   } catch (error) {
-    console.error("Get Programs API Error: ", error);
+    console.error("getPrograms API Error: ", error);
     return null;
   }
 }

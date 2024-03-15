@@ -1,8 +1,8 @@
 import Alpine from "alpinejs";
 
 const goalOptions = [
-  { value: "hypertrophy", label: "Hypertrophy" },
   { value: "strength", label: "Strength" },
+  { value: "hypertrophy", label: "Hypertrophy" },
 ];
 
 const programOptions = [{ value: "type1", label: "Type 1" }];

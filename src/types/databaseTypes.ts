@@ -1,14 +1,20 @@
-export interface ProgramApiResponseProps {
+export interface ProgramsApiResponseProps {
+  id: string;
   title: string;
+  goal: string;
+  program: unknown;
+}
+
+export interface ProgramProps {
   sessions: SessionsProps[];
 }
 
 export interface SessionsProps {
   day: string;
-  workout: ProgramListProps[];
+  workout: WorkoutProps[];
 }
 
-export interface ProgramListProps {
+export interface WorkoutProps {
   order: string;
   exercise: string;
   setsxreps: { set: number; reps: number; load: number }[];

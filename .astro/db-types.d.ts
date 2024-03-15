@@ -5,6 +5,6 @@ declare module 'astro:db' {
 
 	export const ProgramsTable: import("@astrojs/db/runtime").Table<
 		"ProgramsTable",
-		{"id":{"type":"text","schema":{"unique":false,"deprecated":false,"name":"id","collection":"ProgramsTable","primaryKey":true}},"goal":{"type":"text","schema":{"unique":false,"deprecated":false,"name":"goal","collection":"ProgramsTable","primaryKey":false,"optional":false}},"program":{"type":"json","schema":{"optional":false,"unique":false,"deprecated":false,"name":"program","collection":"ProgramsTable"}}}
+		{"id":{"type":"text","schema":{"unique":false,"deprecated":false,"name":"id","collection":"ProgramsTable","primaryKey":true}},"title":{"type":"text","schema":{"unique":false,"deprecated":false,"name":"title","collection":"ProgramsTable","primaryKey":false,"optional":false}},"goal":{"type":"text","schema":{"unique":false,"deprecated":false,"name":"goal","collection":"ProgramsTable","primaryKey":false,"optional":false}},"program":{"type":"json","schema":{"optional":false,"unique":false,"deprecated":false,"name":"program","collection":"ProgramsTable"}}}
 	>;
 }
