@@ -51,6 +51,7 @@ import "../styles/index.css";
                 :id="select.id"
                 x-model="select.value"
                 :disabled="disableSelect(select.id)"
+                @change="handleSelect(select.id)"
                 required
               >
                 <option value="">-- Select an option --</option>
@@ -71,9 +72,6 @@ import "../styles/index.css";
           >
         </div>
       </form>
-
-      <div style="border: 1px solid black; margin-top: 32px; min-height: 64px;">
-      </div>
     </BaseLayout>
   </body>
 </html>

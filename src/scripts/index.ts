@@ -19,6 +19,11 @@ document.addEventListener("alpine:init", () => {
       { id: "goal", label: "Goal", options: goalOptions, value: "" },
       { id: "program", label: "Program", options: programOptions, value: "" },
     ],
+    handleSelect: async function (id: string) {
+      if (id === "goal") {
+        console.log(this.selects[0].value);
+      }
+    },
     disableSelect: function (id: string) {
       if (id === "program" && this.selects[0].value === "") {
         const programSelect = this.selects.find(
