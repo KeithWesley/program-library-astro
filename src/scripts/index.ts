@@ -1,5 +1,4 @@
 import Alpine from "alpinejs";
-import type { ProgramsOptionsApiResponseProps } from "../types/databaseTypes";
 
 document.addEventListener("alpine:init", () => {
   Alpine.data("form", () => ({

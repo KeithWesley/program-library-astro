@@ -2,9 +2,10 @@ import { db, eq, ProgramsTable } from "astro:db";
 import type { ProgramsOptionsApiResponseProps } from "../../types/databaseTypes";
 import type { APIRoute } from "astro";
 
-export const GET: APIRoute = async ({ url }) => {
+export const GET: APIRoute = async ({ request }) => {
   try {
-    const params = new URLSearchParams(url.searchParams);
+    const url = new URL(request.url);
+    const params = new URLSearchParams(url.search);
     const goal: string | null = params.get("goal");
 
     if (goal) {
@@ -38,7 +39,9 @@ export const GET: APIRoute = async ({ url }) => {
       }
     } else {
       return new Response(
-        JSON.stringify({ error: "Invalid query parameter" }),
+        JSON.stringify({
+          error: "Invalid query parameter",
+        }),
         {
           status: 400,
           headers: {
