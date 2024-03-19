@@ -23,7 +23,7 @@ export const GET: APIRoute = async ({ request }) => {
         return new Response(htmlContent, {
           status: 200,
           headers: {
-            "Content-Type": "application/json",
+            "Content-Type": "text/html",
           },
         });
       } else {
