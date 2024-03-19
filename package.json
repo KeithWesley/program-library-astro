@@ -18,7 +18,8 @@
     "@types/alpinejs": "^3.13.7",
     "alpinejs": "^3.13.7",
     "astro": "^4.5.0",
-    "htmx.org": "^1.9.10",
+    "astro-htmx": "^1.0.5",
+    "htmx.org": "^1.9.11",
     "typescript": "^5.4.2"
   },
   "devDependencies": {

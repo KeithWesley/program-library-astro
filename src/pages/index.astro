@@ -28,7 +28,7 @@ import "../styles/index.css";
                 :name="input.id"
                 :id="input.id"
                 x-model="input.value"
-                x-mask="999"
+                x-mask="9999"
                 min="0"
                 max="1000"
                 required
@@ -43,24 +43,35 @@ import "../styles/index.css";
             <p>Select goal then program below.</p>
           </legend>
 
-          <template x-for="select in selects" :key="select.id">
-            <div>
-              <label :for="select.id" x-text="select.label"></label>
-              <select
-                :name="select.id"
-                :id="select.id"
-                x-model="select.value"
-                :disabled="disableSelect(select.id)"
-                @change="handleSelect(select.id)"
-                required
-              >
-                <option value="">-- Select an option --</option>
-                <template x-for="option in select.options" :key="option.value">
-                  <option :value="option.value" x-text="option.label"></option>
-                </template>
-              </select>
-            </div>
-          </template>
+          <div>
+            <label for="goal">Goal</label>
+            <select
+              name="goal"
+              id="goal"
+              required
+              x-model="goal"
+              hx-get="/api/programsOptions"
+              hx-trigger="change"
+              hx-target="#program"
+            >
+              <option value="">-- Select a goal --</option>
+              <option value="strength">Strength</option>
+              <option value="hypertrophy">Hypertrophy</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="program">Program</label>
+            <select
+              name="program"
+              id="program"
+              required
+              x-model="program"
+              :disabled="disableSelect()"
+            >
+              <option value="">-- Select a program --</option>
+            </select>
+          </div>
         </fieldset>
 
         <div class="buttons-container">

@@ -1,11 +1,5 @@
 import Alpine from "alpinejs";
-
-const goalOptions = [
-  { value: "strength", label: "Strength" },
-  { value: "hypertrophy", label: "Hypertrophy" },
-];
-
-const programOptions = [{ value: "type1", label: "Type 1" }];
+import type { ProgramsOptionsApiResponseProps } from "../types/databaseTypes";
 
 document.addEventListener("alpine:init", () => {
   Alpine.data("form", () => ({
@@ -15,30 +9,14 @@ document.addEventListener("alpine:init", () => {
       { id: "benchpress", label: "Bench Press", value: "" },
       { id: "press", label: "Press", value: "" },
     ],
-    selects: [
-      { id: "goal", label: "Goal", options: goalOptions, value: "" },
-      { id: "program", label: "Program", options: programOptions, value: "" },
-    ],
-    handleSelect: async function (id: string) {
-      if (id === "goal") {
-        console.log(this.selects[0].value);
-      }
+    goal: "",
+    program: "",
+    disableSelect: function (): boolean {
+      return this.goal === "" ? ((this.program = ""), true) : false;
     },
-    disableSelect: function (id: string) {
-      if (id === "program" && this.selects[0].value === "") {
-        const programSelect = this.selects.find(
-          (select: any) => select.id === "program"
-        );
-        if (programSelect) programSelect.value = "";
-        return true;
-      } else {
-        return false;
-      }
-    },
-    handleSubmit: async function () {},
-    disableSubmit: function () {
+    disableSubmit: function (): boolean {
       const inputsValid = this.inputs.every((input) => input.value !== "");
-      const selectsValid = this.selects.every((select) => select.value !== "");
+      const selectsValid = this.goal !== "" && this.program !== "";
       return inputsValid && selectsValid ? false : true;
     },
   }));
