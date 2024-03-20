@@ -1,28 +1,16 @@
 import { ProgramsTable, db, eq } from "astro:db";
 import type { ProgramsApiResponseProps } from "../../types/databaseTypes";
-import type { APIRoute } from "astro";
 
-export const GET: APIRoute = async ({ request }) => {
-  const url = new URL(request.url);
-  const params = new URLSearchParams(url.search);
-  const test = params.get("test");
-  console.log(url);
-  console.log(params);
-  console.log("test");
-  let data;
-  if (test) {
-    data = await getPrograms("strength");
-  } else {
-    data = await getPrograms("hypertrophy");
-  }
+export async function GET({ request }: any) {
+  console.log(request);
 
-  return new Response(JSON.stringify(data), {
+  return new Response(JSON.stringify({ message: "This was a GET!" }), {
     status: 200,
     headers: {
       "Content-Type": "application/json",
     },
   });
-};
+}
 
 async function getPrograms(goal: string) {
   try {
