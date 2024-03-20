@@ -50,7 +50,7 @@ export const GET: APIRoute = async ({ url }): Promise<Response> => {
   } catch (error) {
     console.error("Error processing request:", error);
     return new Response(
-      JSON.stringify({ error: "Internal server error: " + error }),
+      JSON.stringify({ error: "Internal server error Keith: " + error }),
       {
         status: 500,
         headers: {
