@@ -5,38 +5,7 @@ import type { APIRoute } from "astro";
 export const GET: APIRoute = async ({ url }): Promise<Response> => {
   try {
     const goal: string | null = url.searchParams.get("goal");
-
-    if (goal) {
-      const data: any = await getPrograms(goal);
-
-      if (data) {
-        let htmlContent: string =
-          "<option value=''>-- Select a program --</option>";
-        htmlContent += data
-          .map(
-            (program: any) =>
-              `<option value='${program.value}'>${program.label}</option>`
-          )
-          .join("");
-
-        return new Response(htmlContent, {
-          status: 200,
-          headers: {
-            "Content-Type": "text/html",
-          },
-        });
-      } else {
-        return new Response(
-          JSON.stringify({ error: "No data found for the given goal" }),
-          {
-            status: 404,
-            headers: {
-              "Content-Type": "application/json",
-            },
-          }
-        );
-      }
-    } else {
+    if (goal === null) {
       return new Response(
         JSON.stringify({
           error: "Invalid query parameter",
@@ -49,9 +18,37 @@ export const GET: APIRoute = async ({ url }): Promise<Response> => {
         }
       );
     }
+
+    const data: ProgramsApiResponseProps[] | null = await getPrograms(goal);
+    if (data === null) {
+      return new Response(
+        JSON.stringify({ error: "No data found for the given goal" }),
+        {
+          status: 404,
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
+    }
+
+    let htmlContent: string =
+      "<option value=''>-- Select a program --</option>";
+    htmlContent += data
+      .map(
+        (program: any) =>
+          `<option value='${program.value}'>${program.label}</option>`
+      )
+      .join("");
+
+    return new Response(htmlContent, {
+      status: 200,
+      headers: {
+        "Content-Type": "text/html",
+      },
+    });
   } catch (error) {
     console.error("Error processing request:", error);
-
     return new Response(
       JSON.stringify({ error: "Internal server error: " + error }),
       {
