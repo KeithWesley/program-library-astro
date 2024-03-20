@@ -2,10 +2,7 @@ import { ProgramsTable, db, eq } from "astro:db";
 import type { ProgramsApiResponseProps } from "../../types/databaseTypes";
 
 export async function GET({ request }: any) {
-  const url = new URL(request.url);
-  const params = new URLSearchParams(url.search);
-  const goal: string | null = params.get("goal");
-  const data = await getPrograms(goal ? goal : "");
+  const data = await getPrograms("hypertrophy");
   return new Response(JSON.stringify(data), {
     status: 200,
     headers: {
