@@ -3,9 +3,13 @@ import type { ProgramsApiResponseProps } from "../../types/databaseTypes";
 import type { APIRoute } from "astro";
 
 export const GET: APIRoute = async ({ request }) => {
-  console.log("REQUEST: ", request);
+  const url = new URL(request.url);
+  const params = new URLSearchParams(url.search);
+  const test = params.get("test");
+  console.log(url);
+  console.log(params);
 
-  const data = await getPrograms("hypertrophy");
+  const data = await getPrograms(test ? "hypertrophy" : "strength");
   return new Response(JSON.stringify(data), {
     status: 200,
     headers: {
