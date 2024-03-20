@@ -50,9 +50,24 @@ import "../styles/index.css";
               id="goal"
               required
               x-model="goal"
-              hx-get="/api/programs.json"
+              hx-get="/api/programs.html"
               hx-trigger="change"
               hx-target="#program"
+            >
+              <option value="">-- Select a goal --</option>
+              <option value="strength">Strength</option>
+              <option value="hypertrophy">Hypertrophy</option>
+            </select>
+
+            <label for="goal">Test</label>
+            <select
+              name="goal"
+              id="goal"
+              required
+              x-model="goal"
+              hx-get="/api/test"
+              hx-trigger="change"
+              hx-target="#results"
             >
               <option value="">-- Select a goal --</option>
               <option value="strength">Strength</option>
@@ -82,6 +97,8 @@ import "../styles/index.css";
             @click.prevent="handleSubmit()">Submit</button
           >
         </div>
+
+        <div id="results"></div>
       </form>
     </BaseLayout>
   </body>

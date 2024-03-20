@@ -1,4 +1,4 @@
-export interface ProgramsOptionsApiResponseProps {
+export interface ProgramsApiResponseProps {
   value: string;
   label: string;
 }
@@ -7,7 +7,7 @@ export interface ProgramApiResponseProps {
   id: string;
   title: string;
   goal: string;
-  program: unknown;
+  program: any;
 }
 
 export interface ProgramProps {

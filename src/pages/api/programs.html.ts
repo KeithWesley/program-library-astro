@@ -1,5 +1,5 @@
 import { db, eq, ProgramsTable } from "astro:db";
-import type { ProgramsOptionsApiResponseProps } from "../../types/databaseTypes";
+import type { ProgramsApiResponseProps } from "../../types/databaseTypes";
 import type { APIRoute } from "astro";
 
 export const GET: APIRoute = async ({ request }) => {
@@ -9,14 +9,15 @@ export const GET: APIRoute = async ({ request }) => {
     const goal: string | null = params.get("goal");
 
     if (goal) {
-      const programsData = await getPrograms(goal);
+      const data: any = await getPrograms(goal);
 
-      if (programsData) {
-        let htmlContent = '<option value="">-- Select a program --</option>';
-        htmlContent += programsData
+      if (data) {
+        let htmlContent: string =
+          "<option value=''>-- Select a program --</option>";
+        htmlContent += data
           .map(
-            (program) =>
-              `<option value="${program.value}">${program.label}</option>`
+            (program: any) =>
+              `<option value='${program.value}'>${program.label}</option>`
           )
           .join("");
 
@@ -65,7 +66,9 @@ export const GET: APIRoute = async ({ request }) => {
   }
 };
 
-async function getPrograms(goal: string) {
+async function getPrograms(
+  goal: string
+): Promise<ProgramsApiResponseProps[] | null> {
   try {
     const response = await db
       .select()
@@ -77,7 +80,7 @@ async function getPrograms(goal: string) {
       label: res.title,
     }));
 
-    return options as ProgramsOptionsApiResponseProps[];
+    return options as ProgramsApiResponseProps[];
   } catch (error) {
     console.error("getPrograms API Error: ", error);
     return null;
