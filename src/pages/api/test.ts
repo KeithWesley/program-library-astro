@@ -1,7 +1,10 @@
 import { ProgramsTable, db, eq } from "astro:db";
 import type { ProgramsApiResponseProps } from "../../types/databaseTypes";
+import type { APIRoute } from "astro";
 
-export async function GET({ request }: any) {
+export const GET: APIRoute = async ({ request }) => {
+  console.log("REQUEST: ", request);
+
   const data = await getPrograms("hypertrophy");
   return new Response(JSON.stringify(data), {
     status: 200,
@@ -9,7 +12,7 @@ export async function GET({ request }: any) {
       "Content-Type": "application/json",
     },
   });
-}
+};
 
 async function getPrograms(goal: string) {
   try {
@@ -29,3 +32,4 @@ async function getPrograms(goal: string) {
     return null;
   }
 }
+``;
