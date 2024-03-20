@@ -82,24 +82,6 @@ import "../styles/index.css";
             @click.prevent="handleSubmit()">Submit</button
           >
         </div>
-
-        <div>
-          <label for="test">Test</label>
-          <select
-            name="test"
-            id="test"
-            required
-            x-model="test"
-            hx-get="/api/test"
-            hx-trigger="change"
-            hx-target="#results"
-          >
-            <option value="one">Test One</option>
-            <option value="two">Test Two</option>
-          </select>
-        </div>
-
-        <div id="results"></div>
       </form>
     </BaseLayout>
   </body>

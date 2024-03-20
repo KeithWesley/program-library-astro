@@ -2,11 +2,9 @@ import { db, eq, ProgramsTable } from "astro:db";
 import type { ProgramsApiResponseProps } from "../../types/databaseTypes";
 import type { APIRoute } from "astro";
 
-export const GET: APIRoute = async ({ request }) => {
+export const GET: APIRoute = async ({ url }): Promise<Response> => {
   try {
-    const url = new URL(request.url);
-    const params = new URLSearchParams(url.search);
-    const goal: string | null = params.get("goal");
+    const goal: string | null = url.searchParams.get("goal");
 
     if (goal) {
       const data: any = await getPrograms(goal);
