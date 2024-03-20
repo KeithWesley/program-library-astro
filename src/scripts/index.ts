@@ -10,6 +10,7 @@ document.addEventListener("alpine:init", () => {
     ],
     goal: "",
     program: "",
+    test: "",
     disableSelect: function (): boolean {
       return this.goal === "" ? ((this.program = ""), true) : false;
     },
