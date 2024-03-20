@@ -15,6 +15,6 @@ export default defineConfig({
     db(),
   ],
   renderers: ["@astrojs/alpinejs"],
-  output: "server",
+  output: "hybrid",
   adapter: netlify(),
 });
