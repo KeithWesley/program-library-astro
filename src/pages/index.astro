@@ -50,9 +50,9 @@ import "../styles/index.css";
               id="goal"
               required
               x-model="goal"
-              hx-get="program-library.netlify.app/api/programs.html"
+              hx-get="api/programs.html"
               hx-trigger="change"
-              hx-target="#results"
+              hx-target="#program"
             >
               <option value="">-- Select a goal --</option>
               <option value="strength">Strength</option>
@@ -82,8 +82,6 @@ import "../styles/index.css";
             @click.prevent="handleSubmit()">Submit</button
           >
         </div>
-
-        <div id="results"></div>
       </form>
     </BaseLayout>
   </body>
