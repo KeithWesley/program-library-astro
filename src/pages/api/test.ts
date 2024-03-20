@@ -4,12 +4,7 @@ import type { ProgramsApiResponseProps } from "../../types/databaseTypes";
 export async function GET({ request }: any) {
   console.log(request);
 
-  return new Response(JSON.stringify({ message: "This was a GET!" }), {
-    status: 200,
-    headers: {
-      "Content-Type": "application/json",
-    },
-  });
+  return new Response(JSON.stringify({ message: "This was a GET!" }));
 }
 
 async function getPrograms(goal: string) {
