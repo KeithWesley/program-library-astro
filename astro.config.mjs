@@ -1,6 +1,7 @@
 import { defineConfig } from "astro/config";
 
 import netlify from "@astrojs/netlify";
+import node from "@astrojs/node";
 import alpinejs from "@astrojs/alpinejs";
 import htmx from "astro-htmx";
 import db from "@astrojs/db";
