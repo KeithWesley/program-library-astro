@@ -1,8 +1,6 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import "../styles/index.css";
-
-export const prerender = true;
 ---
 
 <html lang="en">
@@ -54,7 +52,7 @@ export const prerender = true;
               x-model="goal"
               hx-get="/api/programs.html"
               hx-trigger="change"
-              hx-target="#program"
+              hx-target="#results"
             >
               <option value="">-- Select a goal --</option>
               <option value="strength">Strength</option>
@@ -84,6 +82,8 @@ export const prerender = true;
             @click.prevent="handleSubmit()">Submit</button
           >
         </div>
+
+        <div id="results"></div>
       </form>
     </BaseLayout>
   </body>
