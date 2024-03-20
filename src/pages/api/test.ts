@@ -8,8 +8,13 @@ export const GET: APIRoute = async ({ request }) => {
   const test = params.get("test");
   console.log(url);
   console.log(params);
+  let data;
+  if (test) {
+    data = await getPrograms("strength");
+  } else {
+    data = await getPrograms("hypertrophy");
+  }
 
-  const data = await getPrograms("hypertrophy");
   return new Response(JSON.stringify(data), {
     status: 200,
     headers: {
