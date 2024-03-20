@@ -8,9 +8,12 @@ import db from "@astrojs/db";
 // https://astro.build/config
 export default defineConfig({
   output: "server",
-  adapter: netlify({
-    edgeMiddleware: true,
-  }),
+  adapter: [
+    node({ mode: "standalone" }),
+    netlify({
+      edgeMiddleware: true,
+    }),
+  ],
   integrations: [
     alpinejs({
       entrypoint: "/src/entrypoint",
